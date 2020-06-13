@@ -44,7 +44,7 @@ __webpack_require__.r(__webpack_exports__);
 var App = function App() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: _style_css__WEBPACK_IMPORTED_MODULE_2___default.a.login
-  }, "\u767B\u5F55");
+  }, "\u767B\u5F55\u9875\u9762");
 };
 
 var appTarget = document.createElement("div");
