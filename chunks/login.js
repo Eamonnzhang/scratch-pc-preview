@@ -8,17 +8,36 @@ var GUI =
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+var escape = __webpack_require__(/*! ../../../node_modules/css-loader/lib/url/escape.js */ "./node_modules/css-loader/lib/url/escape.js");
 exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
 // imports
 
 
 // module
-exports.push([module.i, ".style_login_2hlmC {\n  color: red;\n}\n", ""]);
+exports.push([module.i, "html,\nbody,\n.style_app_Fdjoh {\n    /* probably unecessary, transitional until layout is refactored */\n    width: 100%; \n    height: 100%;\n    margin: 0;\n\n    /* Setting min height/width makes the UI scroll below those sizes */\n    min-width: 1024px;\n    min-height: 640px; /* Min height to fit sprite/backdrop button */\n}\n\n#style_app_Fdjoh {\n  height: 100%;\n}\n\n/* @todo: move globally? Safe / side FX, for blocks particularly? */\n\n* { -webkit-box-sizing: border-box; box-sizing: border-box; }\n\n.style_login_2hlmC {\n  background: #9ee4f3 url(" + escape(__webpack_require__(/*! ./images/bg2.jpg */ "./src/pages/login/images/bg2.jpg")) + ") no-repeat center;\n  background-size: 100% 100%;\n  height: 100%;\n}\n\n.style_panel_1YW3v {\n  position: absolute;\n  height: 420px;\n  width: 330px;\n  background: #fff;\n  top: 50%;\n  left: 50%;\n  -webkit-transform: translate(-50%, -50%);\n      -ms-transform: translate(-50%, -50%);\n          transform: translate(-50%, -50%);\n  border-radius: 40px;\n  padding: 0 30px;\n}\n\n.style_menu_2ZnjJ {\n  color: #bebebe;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  padding-top: 10px;\n}\n\n.style_tab-item_2GCWM {\n  font-size: 24px;\n  border-bottom: 1px #e9e9e9 solid;\n  height: 56px;\n  line-height: 56px;\n  -webkit-box-flex: 1;\n  -webkit-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n  text-align: center;\n  cursor: pointer;\n}\n\n.style_active-tab-item_LxQRB {\n  color: #333;\n  border-color: #5bceec;\n}\n", ""]);
 
 // exports
 exports.locals = {
-	"login": "style_login_2hlmC"
+	"app": "style_app_Fdjoh",
+	"login": "style_login_2hlmC",
+	"panel": "style_panel_1YW3v",
+	"menu": "style_menu_2ZnjJ",
+	"tab-item": "style_tab-item_2GCWM",
+	"tabItem": "style_tab-item_2GCWM",
+	"active-tab-item": "style_active-tab-item_LxQRB",
+	"activeTabItem": "style_active-tab-item_LxQRB"
 };
+
+/***/ }),
+
+/***/ "./src/pages/login/images/bg2.jpg":
+/*!****************************************!*\
+  !*** ./src/pages/login/images/bg2.jpg ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "static/assets/3fcc49446132c2124172e01a4cee61a6.jpg";
 
 /***/ }),
 
@@ -37,19 +56,62 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./style.css */ "./src/pages/login/style.css");
 /* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_style_css__WEBPACK_IMPORTED_MODULE_2__);
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
+var TAB_NAME = {
+  PHONE: "phone",
+  WECHAT: "wechat"
+};
+var menuList = {
+  phone: "手机号登录",
+  wechat: "微信扫码"
+};
 
 var App = function App() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  // const activeTab = 'phone';
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(TAB_NAME.PHONE),
+      _useState2 = _slicedToArray(_useState, 2),
+      activeTab = _useState2[0],
+      setActiveTab = _useState2[1];
+
+  var handleTabItemClick = function handleTabItemClick(key) {
+    setActiveTab(key);
+  };
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: _style_css__WEBPACK_IMPORTED_MODULE_2___default.a.login
-  }, "\u767B\u5F55\u9875\u9762");
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: _style_css__WEBPACK_IMPORTED_MODULE_2___default.a.panel
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: _style_css__WEBPACK_IMPORTED_MODULE_2___default.a.menu
+  }, Object.keys(menuList).map(function (key) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      key: key,
+      className: "".concat(_style_css__WEBPACK_IMPORTED_MODULE_2___default.a.tabItem, " ").concat(activeTab === key ? _style_css__WEBPACK_IMPORTED_MODULE_2___default.a.activeTabItem : ""),
+      onClick: function onClick() {
+        return handleTabItemClick(key);
+      }
+    }, menuList[key]);
+  }))));
 };
 
 var appTarget = document.createElement("div");
+appTarget.className = _style_css__WEBPACK_IMPORTED_MODULE_2___default.a.app;
 document.body.appendChild(appTarget);
-react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(App, null), appTarget);
+react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(App, null), appTarget);
 
 /***/ }),
 
