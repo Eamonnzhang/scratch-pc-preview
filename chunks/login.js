@@ -166,7 +166,7 @@ var LoginInput = function LoginInput(props) {
     className: _style_css__WEBPACK_IMPORTED_MODULE_2___default.a.inputIcon
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ant_design_icons__WEBPACK_IMPORTED_MODULE_1__["MobileOutlined"], {
     style: {
-      fontSize: "20px",
+      fontSize: "21px",
       color: "#08c"
     }
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
