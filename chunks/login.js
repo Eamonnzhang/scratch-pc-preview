@@ -13,13 +13,15 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, ".style_login-input_hf1CD {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  width: 100%;\n  height: 57px;\n  margin-bottom: 41px;\n  position: relative;\n  background: #f7f7f7;\n  border-radius: 29px;\n}\n\n.style_input_3Zzwu {\n  width: 245px;\n  height: 57px;\n  font-size: 18px;\n  color: #333;\n  background: none;\n  border: none;\n  \boutline: none;\n}\n\n.style_input_3Zzwu:focus {\n  outline: none;\n}", ""]);
+exports.push([module.i, ".style_login-input_hf1CD {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  width: 100%;\n  height: 57px;\n  margin-bottom: 30px;\n  position: relative;\n  background: #f7f7f7;\n  border-radius: 29px;\n}\n\n.style_input_3Zzwu {\n  width: 245px;\n  height: 57px;\n  font-size: 18px;\n  color: #333;\n  background: none;\n  border: none;\n  \boutline: none;\n}\n\n.style_input_3Zzwu:focus {\n  outline: none;\n}\n\n.style_input-icon_wqYGs {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  padding: 0 10px;\n}\n", ""]);
 
 // exports
 exports.locals = {
 	"login-input": "style_login-input_hf1CD",
 	"loginInput": "style_login-input_hf1CD",
-	"input": "style_input_3Zzwu"
+	"input": "style_input_3Zzwu",
+	"input-icon": "style_input-icon_wqYGs",
+	"inputIcon": "style_input-icon_wqYGs"
 };
 
 /***/ }),
@@ -36,10 +38,15 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".style_login-panel_3WPQv {\n  padding: 20px 0;\n}\n\n.style_login-button_29Dzq {\n  display: block;\n  width: 100%;\n  height: 63px;\n  line-height: 63px;\n  background: #5bceec;\n  font-size: 26px;\n  color: #fff;\n  border: none;\n  border-radius: 32px;\n  -webkit-box-shadow: 0 8px 20px rgba(26, 186, 207, 0.64);\n          box-shadow: 0 8px 20px rgba(26, 186, 207, 0.64);\n  text-align: center;\n}\n", ""]);
 
 // exports
-
+exports.locals = {
+	"login-panel": "style_login-panel_3WPQv",
+	"loginPanel": "style_login-panel_3WPQv",
+	"login-button": "style_login-button_29Dzq",
+	"loginButton": "style_login-button_29Dzq"
+};
 
 /***/ }),
 
@@ -56,7 +63,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "html,\nbody,\n.style_app_Fdjoh {\n    /* probably unecessary, transitional until layout is refactored */\n    width: 100%; \n    height: 100%;\n    margin: 0;\n\n    /* Setting min height/width makes the UI scroll below those sizes */\n    min-width: 1024px;\n    min-height: 640px; /* Min height to fit sprite/backdrop button */\n}\n\n#style_app_Fdjoh {\n  height: 100%;\n}\n\n/* @todo: move globally? Safe / side FX, for blocks particularly? */\n\n* { -webkit-box-sizing: border-box; box-sizing: border-box; }\n\n.style_login_2hlmC {\n  background: #9ee4f3 url(" + escape(__webpack_require__(/*! ./images/bg2.jpg */ "./src/pages/login/images/bg2.jpg")) + ") no-repeat center;\n  background-size: 100% 100%;\n  height: 100%;\n}\n\n.style_panel_1YW3v {\n  position: absolute;\n  height: 420px;\n  width: 390px;\n  background: #fff;\n  top: 50%;\n  left: 50%;\n  -webkit-transform: translate(-50%, -50%);\n      -ms-transform: translate(-50%, -50%);\n          transform: translate(-50%, -50%);\n  border-radius: 40px;\n  padding: 0 30px;\n}\n\n.style_menu_2ZnjJ {\n  color: #bebebe;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  padding-top: 10px;\n}\n\n.style_tab-item_2GCWM {\n  font-size: 24px;\n  border-bottom: 1px #e9e9e9 solid;\n  height: 56px;\n  line-height: 56px;\n  -webkit-box-flex: 1;\n  -webkit-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n  text-align: center;\n  cursor: pointer;\n}\n\n.style_active-tab-item_LxQRB {\n  color: #333;\n  border-color: #5bceec;\n}\n", ""]);
+exports.push([module.i, "html,\nbody,\n.style_app_Fdjoh {\n    /* probably unecessary, transitional until layout is refactored */\n    width: 100%; \n    height: 100%;\n    margin: 0;\n\n    /* Setting min height/width makes the UI scroll below those sizes */\n    min-width: 1024px;\n    min-height: 640px; /* Min height to fit sprite/backdrop button */\n}\n\n#style_app_Fdjoh {\n  height: 100%;\n}\n\n/* @todo: move globally? Safe / side FX, for blocks particularly? */\n\n* { -webkit-box-sizing: border-box; box-sizing: border-box; }\n\n.style_login_2hlmC {\n  background: #9ee4f3 url(" + escape(__webpack_require__(/*! ./images/bg2.jpg */ "./src/pages/login/images/bg2.jpg")) + ") no-repeat center;\n  background-size: 100% 100%;\n  height: 100%;\n}\n\n.style_panel_1YW3v {\n  position: absolute;\n  width: 390px;\n  background: #fff;\n  top: 50%;\n  left: 50%;\n  -webkit-transform: translate(-50%, -50%);\n      -ms-transform: translate(-50%, -50%);\n          transform: translate(-50%, -50%);\n  border-radius: 40px;\n  padding: 0 30px;\n}\n\n.style_menu_2ZnjJ {\n  color: #bebebe;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  padding-top: 10px;\n}\n\n.style_tab-item_2GCWM {\n  font-size: 24px;\n  border-bottom: 1px #e9e9e9 solid;\n  height: 56px;\n  line-height: 56px;\n  -webkit-box-flex: 1;\n  -webkit-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n  text-align: center;\n  cursor: pointer;\n}\n\n.style_active-tab-item_LxQRB {\n  color: #333;\n  border-color: #5bceec;\n}\n", ""]);
 
 // exports
 exports.locals = {
@@ -102,12 +109,12 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 var TAB_NAME = {
-  PHONE: "phone",
-  WECHAT: "wechat"
+  PHONE: 'phone',
+  WECHAT: 'wechat'
 };
 var menuList = {
-  phone: "手机号登录",
-  wechat: "微信扫码"
+  phone: '手机号登录',
+  wechat: '微信扫码'
 };
 
 var App = function App() {
@@ -129,7 +136,7 @@ var App = function App() {
   }, Object.keys(menuList).map(function (key) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       key: key,
-      className: "".concat(_style_css__WEBPACK_IMPORTED_MODULE_2___default.a.tabItem, " ").concat(activeTab === key ? _style_css__WEBPACK_IMPORTED_MODULE_2___default.a.activeTabItem : ""),
+      className: "".concat(_style_css__WEBPACK_IMPORTED_MODULE_2___default.a.tabItem, " ").concat(activeTab === key ? _style_css__WEBPACK_IMPORTED_MODULE_2___default.a.activeTabItem : ''),
       onClick: function onClick() {
         return handleTabItemClick(key);
       }
@@ -152,34 +159,52 @@ var App = function App() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _ant_design_icons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ant-design/icons */ "./node_modules/@ant-design/icons/es/index.js");
-/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./style.css */ "./src/pages/login/components/login-input/style.css");
-/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_style_css__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _ant_design_icons__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ant-design/icons */ "./node_modules/@ant-design/icons/es/index.js");
+/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./style.css */ "./src/pages/login/components/login-input/style.css");
+/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_style_css__WEBPACK_IMPORTED_MODULE_3__);
+
 
 
 
 
 var LoginInput = function LoginInput(props) {
+  var type = props.type,
+      placeholder = props.placeholder,
+      onChange = props.onChange,
+      value = props.value;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: _style_css__WEBPACK_IMPORTED_MODULE_2___default.a.loginInput
+    className: _style_css__WEBPACK_IMPORTED_MODULE_3___default.a.loginInput
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: _style_css__WEBPACK_IMPORTED_MODULE_2___default.a.inputIcon
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ant_design_icons__WEBPACK_IMPORTED_MODULE_1__["MobileOutlined"], {
+    className: _style_css__WEBPACK_IMPORTED_MODULE_3___default.a.inputIcon
+  }, type === 'phone' && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ant_design_icons__WEBPACK_IMPORTED_MODULE_2__["MobileOutlined"], {
     style: {
-      fontSize: "21px",
-      color: "#08c"
+      fontSize: '21px',
+      color: '#08c'
+    }
+  }), type === 'password' && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ant_design_icons__WEBPACK_IMPORTED_MODULE_2__["LockOutlined"], {
+    style: {
+      fontSize: '21px',
+      color: '#08c'
     }
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: _style_css__WEBPACK_IMPORTED_MODULE_2___default.a.inputWrap
+    className: _style_css__WEBPACK_IMPORTED_MODULE_3___default.a.inputWrap
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
     type: "text",
-    className: _style_css__WEBPACK_IMPORTED_MODULE_2___default.a.input,
-    placeholder: props.placeholder,
-    onChange: props.onChange,
-    value: props.value
+    className: _style_css__WEBPACK_IMPORTED_MODULE_3___default.a.input,
+    placeholder: placeholder,
+    onChange: onChange,
+    value: value
   })));
 };
 
+LoginInput.propTypes = {
+  type: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  value: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  onChange: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
+  placeholder: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string
+};
 /* harmony default export */ __webpack_exports__["default"] = (LoginInput);
 
 /***/ }),
@@ -232,12 +257,19 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var LoginPanel = function LoginPanel(props) {
+var LoginPanel = function LoginPanel() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: _style_css__WEBPACK_IMPORTED_MODULE_2___default.a.loginPanel
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_login_input__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    type: "phone",
     placeholder: "\u8BF7\u8F93\u5165\u624B\u673A\u53F7"
-  }));
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_login_input__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    type: "password",
+    placeholder: "\u8BF7\u8F93\u5165\u5BC6\u7801"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    className: _style_css__WEBPACK_IMPORTED_MODULE_2___default.a.loginButton,
+    javascript: "void(0)"
+  }, "\u767B\u5F55"));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (LoginPanel);
