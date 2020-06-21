@@ -38,7 +38,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, ".style_login-panel_3WPQv {\n  padding: 20px 0;\n}\n\n.style_login-button_29Dzq {\n  display: block;\n  width: 100%;\n  height: 63px;\n  line-height: 63px;\n  background: #5bceec;\n  font-size: 26px;\n  color: #fff;\n  border: none;\n  border-radius: 32px;\n  -webkit-box-shadow: 0 8px 20px rgba(26, 186, 207, 0.64);\n          box-shadow: 0 8px 20px rgba(26, 186, 207, 0.64);\n  text-align: center;\n}\n", ""]);
+exports.push([module.i, ".style_login-panel_3WPQv {\n  padding: 20px 0;\n}\n\n.style_login-button_29Dzq {\n  width: 100%;\n  height: 63px;\n  line-height: 63px;\n  background: #5bceec;\n  font-size: 26px;\n  color: #fff;\n  border: none;\n  cursor: pointer;\n  border-radius: 32px;\n  -webkit-box-shadow: 0 8px 20px rgba(26, 186, 207, 0.64);\n          box-shadow: 0 8px 20px rgba(26, 186, 207, 0.64);\n  text-align: center;\n}\n", ""]);
 
 // exports
 exports.locals = {
@@ -76,6 +76,48 @@ exports.locals = {
 	"active-tab-item": "style_active-tab-item_LxQRB",
 	"activeTabItem": "style_active-tab-item_LxQRB"
 };
+
+/***/ }),
+
+/***/ "./src/pages/hooks/useInputValue.js":
+/*!******************************************!*\
+  !*** ./src/pages/hooks/useInputValue.js ***!
+  \******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return useInputValue; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+function useInputValue(initialValue) {
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(initialValue),
+      _useState2 = _slicedToArray(_useState, 2),
+      value = _useState2[0],
+      setValue = _useState2[1];
+
+  var onChange = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(function (e) {
+    setValue(e.currentTarget.value);
+  });
+  return {
+    value: value,
+    onChange: onChange
+  };
+}
 
 /***/ }),
 
@@ -127,6 +169,10 @@ var App = function App() {
     setActiveTab(key);
   };
 
+  var handleLogin = function handleLogin(loginData) {
+    window.location.href = 'scratch.html';
+  };
+
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: _style_css__WEBPACK_IMPORTED_MODULE_2___default.a.login
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -141,7 +187,9 @@ var App = function App() {
         return handleTabItemClick(key);
       }
     }, menuList[key]);
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_login_panel_index_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], null)));
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_login_panel_index_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    onLogin: handleLogin
+  })));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (App);
@@ -178,20 +226,20 @@ var LoginInput = function LoginInput(props) {
     className: _style_css__WEBPACK_IMPORTED_MODULE_3___default.a.loginInput
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: _style_css__WEBPACK_IMPORTED_MODULE_3___default.a.inputIcon
-  }, type === 'phone' && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ant_design_icons__WEBPACK_IMPORTED_MODULE_2__["MobileOutlined"], {
+  }, type === 'tel' && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ant_design_icons__WEBPACK_IMPORTED_MODULE_2__["MobileOutlined"], {
     style: {
       fontSize: '21px',
-      color: '#08c'
+      color: '#5bceec'
     }
   }), type === 'password' && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ant_design_icons__WEBPACK_IMPORTED_MODULE_2__["LockOutlined"], {
     style: {
       fontSize: '21px',
-      color: '#08c'
+      color: '#5bceec'
     }
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: _style_css__WEBPACK_IMPORTED_MODULE_3___default.a.inputWrap
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-    type: "text",
+    type: type,
     className: _style_css__WEBPACK_IMPORTED_MODULE_3___default.a.input,
     placeholder: placeholder,
     onChange: onChange,
@@ -250,28 +298,46 @@ if(false) {}
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _login_input__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../login-input */ "./src/pages/login/components/login-input/index.jsx");
-/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./style.css */ "./src/pages/login/components/login-panel/style.css");
-/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_style_css__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _hooks_useInputValue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../hooks/useInputValue */ "./src/pages/hooks/useInputValue.js");
+/* harmony import */ var _login_input__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../login-input */ "./src/pages/login/components/login-input/index.jsx");
+/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./style.css */ "./src/pages/login/components/login-panel/style.css");
+/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_style_css__WEBPACK_IMPORTED_MODULE_4__);
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 
 
 
-var LoginPanel = function LoginPanel() {
+
+
+
+var LoginPanel = function LoginPanel(props) {
+  var onLogin = props.onLogin;
+  var phoneBind = Object(_hooks_useInputValue__WEBPACK_IMPORTED_MODULE_2__["default"])('');
+  var passwordBind = Object(_hooks_useInputValue__WEBPACK_IMPORTED_MODULE_2__["default"])('');
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: _style_css__WEBPACK_IMPORTED_MODULE_2___default.a.loginPanel
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_login_input__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    type: "phone",
+    className: _style_css__WEBPACK_IMPORTED_MODULE_4___default.a.loginPanel
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_login_input__WEBPACK_IMPORTED_MODULE_3__["default"], _extends({
+    type: "tel",
     placeholder: "\u8BF7\u8F93\u5165\u624B\u673A\u53F7"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_login_input__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  }, phoneBind)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_login_input__WEBPACK_IMPORTED_MODULE_3__["default"], _extends({
     type: "password",
     placeholder: "\u8BF7\u8F93\u5165\u5BC6\u7801"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    className: _style_css__WEBPACK_IMPORTED_MODULE_2___default.a.loginButton,
-    javascript: "void(0)"
+  }, passwordBind)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: _style_css__WEBPACK_IMPORTED_MODULE_4___default.a.loginButton,
+    onClick: function onClick() {
+      return onLogin({
+        phone: phoneBind.value,
+        password: passwordBind.value
+      });
+    }
   }, "\u767B\u5F55"));
 };
 
+LoginPanel.propTypes = {
+  onLogin: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func
+};
 /* harmony default export */ __webpack_exports__["default"] = (LoginPanel);
 
 /***/ }),
